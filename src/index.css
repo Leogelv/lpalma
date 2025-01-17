@@ -1,61 +1,161 @@
 :root {
-  /* Обновленные цвета */
+  /* Общие переменные */
+  --button-radius: 12px;  /* Единый радиус для кнопок и инпутов */
+  
+  /* Темная тема */
   --primary: #996200;
   --primary-light: #b17500;
   --primary-dark: #805200;
-  --background: #111111; /* Новый темный фон */
-  --surface: #1a1a1a;   /* Темная поверхность */
-  --text: #ffffff;      /* Светлый текст */
+  --background: #111111;
+  --surface: #1a1a1a;
+  --text: #ffffff;
   --text-light: #9ca3af;
-  
-  /* Остальные переменные без изменений */
   --accent: #ff9d00;
   --accent-light: #ffb340;
+}
+
+[data-theme="light"] {
+  /* Обновленные цвета для светлой темы */
+  --primary: #996200;
+  --primary-light: #b17500;
+  --primary-dark: #805200;
+  --background: #f8f9fc;
+  --surface: #ffffff;
+  --text: #1a1a1a;
+  --text-light: #4b5563;
+  --accent: #996200;
+  --accent-light: #b17500;
   
-  /* Типографика */
-  --font-heading: 'Clash Display', sans-serif;
-  --font-body: 'Inter', sans-serif;
-  --line-height-tight: 1.2;
-  --line-height-normal: 1.5;
-  --line-height-relaxed: 1.75;
-  
-  /* Размеры шрифтов */
-  --text-xs: 0.75rem;
-  --text-sm: 0.875rem;
-  --text-base: 1rem;
-  --text-lg: 1.125rem;
-  --text-xl: 1.25rem;
-  --text-2xl: 1.5rem;
-  --text-3xl: 1.875rem;
-  --text-4xl: 2.25rem;
-  --text-5xl: 3rem;
-  
-  /* Отступы */
-  --space-xs: 0.5rem;
-  --space-sm: 1rem;
-  --space-md: 1.5rem;
-  --space-lg: 2rem;
-  --space-xl: 3rem;
-  
-  /* Bento UI стили */
-  --bento-radius: 24px;
-  --bento-shadow: 
-    0px 2px 4px rgba(0, 0, 0, 0.02),
-    0px 4px 8px rgba(0, 0, 0, 0.02),
-    0px 8px 16px rgba(0, 0, 0, 0.02);
-  --bento-border: 1px solid rgba(153, 98, 0, 0.1);
-  --bento-gradient: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.5),
-    rgba(255, 255, 255, 0.2)
-  );
+  /* Обновленные стили для карточек */
+  --card-bg: #F0F0E8;
+  --card-border: rgba(153, 98, 0, 0.1);
+  --card-shadow: 0 1px 3px rgba(153, 98, 0, 0.1), 0 1px 2px rgba(153, 98, 0, 0.06);
+}
+
+/* Унифицируем радиусы для всех элементов */
+.button,
+.contactButton,
+.hero-button,
+.neuro-button,
+.submitButton,
+.input,
+input,
+.card,
+.neuro-card,
+.bento-card {
+  border-radius: var(--button-radius) !important;
+}
+
+/* Закомментируем анимации с летающими объектами в формах */
+.floatingData {
+  display: none !important;  /* Отключаем летающие элементы */
+}
+
+/* Общие стили для всех карточек в светлой теме */
+[data-theme="light"] .mainCard,
+[data-theme="light"] .descriptionCard,
+[data-theme="light"] .ctaCard,
+[data-theme="light"] .whyAiCard,
+[data-theme="light"] .stepCard,
+[data-theme="light"] .statCard,
+[data-theme="light"] .formCard,
+[data-theme="light"] .solutionCard,
+[data-theme="light"] .faqItem,
+[data-theme="light"] .benefitCard,
+[data-theme="light"] .neuro-card,
+[data-theme="light"] .bento-card {
+  background: #F0F0E8 !important;
+  border: 1px solid rgba(153, 98, 0, 0.1) !important;
+  box-shadow: 0 1px 3px rgba(153, 98, 0, 0.1), 0 1px 2px rgba(153, 98, 0, 0.06) !important;
+  transition: all 0.3s ease !important;
+}
+
+/* Эффекты при наведении для всех карточек */
+[data-theme="light"] .mainCard:hover,
+[data-theme="light"] .descriptionCard:hover,
+[data-theme="light"] .ctaCard:hover,
+[data-theme="light"] .whyAiCard:hover,
+[data-theme="light"] .stepCard:hover,
+[data-theme="light"] .statCard:hover,
+[data-theme="light"] .formCard:hover,
+[data-theme="light"] .solutionCard:hover,
+[data-theme="light"] .faqItem:hover,
+[data-theme="light"] .benefitCard:hover,
+[data-theme="light"] .neuro-card:hover,
+[data-theme="light"] .bento-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(153, 98, 0, 0.15) !important;
+}
+
+/* Специальные стили для активных элементов */
+[data-theme="light"] .faqItem.active {
+  border-color: var(--primary) !important;
+  box-shadow: 0 4px 12px rgba(153, 98, 0, 0.15) !important;
+}
+
+/* Обновленные стили для эффектов свечения */
+[data-theme="light"] .cardGlow,
+[data-theme="light"] .buttonGlow,
+[data-theme="light"] .inputGlow {
+  background: radial-gradient(
+    circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(153, 98, 0, 0.15),
+    transparent 70%
+  ) !important;
+}
+
+/* Стили для инпутов в светлой теме */
+[data-theme="light"] .input,
+[data-theme="light"] input {
+  background: var(--surface) !important;
+  border: 1px solid var(--card-border) !important;
+  color: var(--text) !important;
+}
+
+/* Остальные переменные без изменений */
+--font-heading: 'Clash Display', sans-serif;
+--font-body: 'Inter', sans-serif;
+--line-height-tight: 1.2;
+--line-height-normal: 1.5;
+--line-height-relaxed: 1.75;
+
+/* Размеры шрифтов */
+--text-xs: 0.75rem;
+--text-sm: 0.875rem;
+--text-base: 1rem;
+--text-lg: 1.125rem;
+--text-xl: 1.25rem;
+--text-2xl: 1.5rem;
+--text-3xl: 1.875rem;
+--text-4xl: 2.25rem;
+--text-5xl: 3rem;
+
+/* Отступы */
+--space-xs: 0.5rem;
+--space-sm: 1rem;
+--space-md: 1.5rem;
+--space-lg: 2rem;
+--space-xl: 3rem;
+
+/* Bento UI стили */
+--bento-radius: 24px;
+--bento-shadow: 
+  0px 2px 4px rgba(0, 0, 0, 0.02),
+  0px 4px 8px rgba(0, 0, 0, 0.02),
+  0px 8px 16px rgba(0, 0, 0, 0.02);
+--bento-border: 1px solid rgba(153, 98, 0, 0.1);
+--bento-gradient: linear-gradient(
+  135deg,
+  rgba(255, 255, 255, 0.5),
+  rgba(255, 255, 255, 0.2)
+);
 }
 html{
   scroll-behavior: smooth;
 }
 /* Базовые стили */
 body {
-  font-family: var(--font-body);
+  font-family: 'Inter', sans-serif;
   line-height: var(--line-height-normal);
   color: var(--text);
   background: var(--background);
@@ -63,7 +163,7 @@ body {
 
 /* Типографика */
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-heading);
+  font-family: 'Involve', sans-serif;
   line-height: var(--line-height-tight);
   letter-spacing: -0.02em;
   color: var(--text);
@@ -969,4 +1069,216 @@ p {
     font-size: var(--text-base);
     padding: var(--space-lg);
   }
+} 
+
+/* Обновим стили для заголовков */
+[data-theme="light"] h1:not(.gradientText),
+[data-theme="light"] h2:not(.gradientText),
+[data-theme="light"] h3:not(.gradientText) {
+  color: var(--primary);
+}
+
+/* Обновим стили для карточек в светлой теме */
+[data-theme="light"] .neuro-card,
+[data-theme="light"] .bento-card {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(153, 98, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+} 
+
+/* Убедимся, что все текстовые элементы используют правильные шрифты */
+.title, .sectionTitle, .cardTitle, .brandTitle {
+  font-family: 'Involve', sans-serif !important;
+}
+
+.description, .text, .paragraph, p {
+  font-family: 'Inter', sans-serif !important;
+} 
+
+/* Добавим глобальные переходы */
+* {
+  transition: background-color 0.3s ease,
+              color 0.3s ease,
+              border-color 0.3s ease,
+              box-shadow 0.3s ease;
+}
+
+/* Исключим некоторые элементы из перехода */
+.gradientText,
+.button,
+.icon {
+  transition: none;
+} 
+
+/* Убираем градиенты в светлой теме */
+[data-theme="light"] .gradientText,
+[data-theme="light"] .title .gradientText,
+[data-theme="light"] .sectionTitle .gradientText,
+[data-theme="light"] h1 .gradientText,
+[data-theme="light"] h2 .gradientText,
+[data-theme="light"] h3 .gradientText {
+  background: none;
+  -webkit-background-clip: unset;
+  -webkit-text-fill-color: unset;
+  color: var(--primary);
+}
+
+/* Заменяем градиентные кнопки на кнопки с фирменным цветом */
+[data-theme="light"] .button,
+[data-theme="light"] .contactButton,
+[data-theme="light"] .hero-button,
+[data-theme="light"] .neuro-button,
+[data-theme="light"] .submitButton {
+  background: var(--primary);
+  background-image: none;
+}
+
+/* Заменяем градиентные эффекты на фоне */
+[data-theme="light"] .gradientBlob,
+[data-theme="light"] .blob1,
+[data-theme="light"] .blob2,
+[data-theme="light"] .blob3 {
+  background: var(--primary);
+  opacity: 0.05;
+}
+
+/* Заменяем градиентные эффекты в карточках */
+[data-theme="light"] .cardGlow,
+[data-theme="light"] .buttonGlow,
+[data-theme="light"] .toggleGlow {
+  background: var(--primary);
+  opacity: 0.1;
+}
+
+/* Обновляем стили для заголовков */
+[data-theme="light"] h1,
+[data-theme="light"] h2,
+[data-theme="light"] h3 {
+  color: var(--primary);
+}
+
+/* Обновляем стили для карточек */
+[data-theme="light"] .neuro-card,
+[data-theme="light"] .bento-card {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(153, 98, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Обновляем hover эффекты */
+[data-theme="light"] .button:hover,
+[data-theme="light"] .contactButton:hover,
+[data-theme="light"] .hero-button:hover,
+[data-theme="light"] .neuro-button:hover,
+[data-theme="light"] .submitButton:hover {
+  background: var(--primary-dark);
+}
+
+/* Обновляем цвета иконок */
+[data-theme="light"] .icon {
+  color: var(--primary);
+} 
+
+/* Убираем все градиенты в светлой теме */
+[data-theme="light"] .gradientText,
+[data-theme="light"] .sectionTitle,
+[data-theme="light"] .title,
+[data-theme="light"] h1,
+[data-theme="light"] h2,
+[data-theme="light"] h3,
+[data-theme="light"] .neuro-title,
+[data-theme="light"] .hero-title {
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  -webkit-text-fill-color: unset !important;
+  color: var(--primary) !important;
+  text-shadow: none !important;
+}
+
+/* Обновляем стили карточек в светлой теме */
+[data-theme="light"] .neuro-card,
+[data-theme="light"] .bento-card,
+[data-theme="light"] .faqItem,
+[data-theme="light"] .whyAiCard,
+[data-theme="light"] .stepCard,
+[data-theme="light"] .statCard,
+[data-theme="light"] .formCard {
+  background: var(--card-bg) !important;
+  background-image: var(--card-gradient) !important;
+  border: 1px solid var(--card-border) !important;
+  box-shadow: var(--card-shadow) !important;
+}
+
+/* Обновляем стили кнопок в светлой теме */
+[data-theme="light"] .button,
+[data-theme="light"] .contactButton,
+[data-theme="light"] .hero-button,
+[data-theme="light"] .neuro-button,
+[data-theme="light"] .submitButton {
+  background: var(--primary) !important;
+  background-image: none !important;
+  border-radius: var(--button-radius) !important;
+  border: none !important;
+  color: white !important;
+}
+
+/* Обновляем ховер эффекты для кнопок */
+[data-theme="light"] .button:hover,
+[data-theme="light"] .contactButton:hover,
+[data-theme="light"] .hero-button:hover,
+[data-theme="light"] .neuro-button:hover,
+[data-theme="light"] .submitButton:hover {
+  background: var(--primary-dark) !important;
+}
+
+/* Обновляем стили инпутов в светлой теме */
+[data-theme="light"] .input,
+[data-theme="light"] input {
+  background: var(--card-bg) !important;
+  border: 1px solid var(--card-border) !important;
+  border-radius: var(--button-radius) !important;
+  color: var(--text) !important;
+}
+
+/* Обновляем стили для фоновых элементов */
+[data-theme="light"] .gradientBlob,
+[data-theme="light"] .blob1,
+[data-theme="light"] .blob2,
+[data-theme="light"] .blob3,
+[data-theme="light"] .shapeGlow,
+[data-theme="light"] .cardGlow {
+  background: var(--primary) !important;
+  opacity: 0.05 !important;
+}
+
+/* Обновляем стили для navbar в светлой теме */
+[data-theme="light"] .navbar {
+  background: rgba(255, 255, 255, 0.9) !important;
+  border-bottom: 1px solid var(--card-border) !important;
+  box-shadow: var(--card-shadow) !important;
+}
+
+/* Обновляем стили для аккордеона в светлой теме */
+[data-theme="light"] .faqItem {
+  background: var(--card-bg) !important;
+  background-image: var(--card-gradient) !important;
+  border: 1px solid var(--card-border) !important;
+  box-shadow: var(--card-shadow) !important;
+}
+
+[data-theme="light"] .faqItem.active {
+  background: var(--card-bg) !important;
+  background-image: var(--card-gradient) !important;
+  border-color: var(--primary) !important;
+  box-shadow: 0 4px 12px rgba(153, 98, 0, 0.15) !important;
+}
+
+/* Обновляем эффекты свечения */
+[data-theme="light"] .cardGlow,
+[data-theme="light"] .buttonGlow {
+  background: radial-gradient(
+    circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(153, 98, 0, 0.15),
+    transparent 70%
+  ) !important;
 } 

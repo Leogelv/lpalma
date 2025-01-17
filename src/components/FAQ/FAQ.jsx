@@ -96,11 +96,11 @@ const FAQ = () => {
             ))}
           </div>
 
-          <div className={styles.shapeWrapper}>
+          {/*<div className={styles.shapeWrapper}>
             <div ref={shapeRef} className={styles.abstractShape}>
               <div className={styles.shapeGlow}></div>
             </div>
-          </div>
+          </div>*/}
         </div>
       </div>
     </section>

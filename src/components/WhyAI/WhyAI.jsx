@@ -62,7 +62,7 @@ const WhyAI = () => {
                 <Icon icon={feature.icon} />
               </div>
               <h3 className={styles.cardTitle}>{feature.title}</h3>
-              <p className={styles.cardDescription}>{feature.description}</p>
+              {/* <p className={styles.cardDescription}>{feature.description}</p> */}
               <div className={styles.cardGradient}></div>
             </div>
           ))}

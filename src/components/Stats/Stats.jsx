@@ -1,59 +1,47 @@
 import { useLayoutEffect, useRef } from 'react'
 import gsap from 'gsap'
 import styles from './Stats.module.css'
+import gartnerLogo from '/Gartner Logo.svg'
+import mcKinseyLogo from '/McKinsey Script Mark 2019.svg'
+import menloLogo from '/Menlo Ventures Logo.svg'
 
 const Stats = () => {
   const sectionRef = useRef(null)
-  const numbersRef = useRef(null)
 
   const stats = [
     {
-      number: 40,
-      label: 'Ускорение обработки заявок',
-      suffix: '%'
+      source: 'Gartner',
+      text: 'К 2027 году каждая вторая GenAI-модель будет отраслевой',
+      logo: gartnerLogo
     },
     {
-      number: 15,
-      label: 'Сокращение расходов',
-      suffix: '%'
+      source: 'McKinsey',
+      text: 'Вклад AI в мировую экономику к 2030 году составит $2.6-4.4 трлн ежегодно',
+      logo: mcKinseyLogo
     },
     {
-      number: 60,
-      label: 'Автоматизация рутинных задач',
-      suffix: '%'
+      source: 'Menlo Ventures',
+      text: 'Рост инвестиций в AI вырос в 6 раз за 2024 год',
+      logo: menloLogo
     }
   ]
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
-      // Анимация появления карточек
-      gsap.from(`.${styles.statCard}`, {
-        y: 40,
-        opacity: 0,
-        duration: 1,
-        stagger: 0.2,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: 'top center+=100',
+      gsap.fromTo(
+        `.${styles.statCard}`,
+        { 
+          opacity: 0,
+          y: 100
+        },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          stagger: 0.2,
+          ease: 'power2.out'
         }
-      })
-
-      // Анимация чисел
-      const numbers = numbersRef.current.querySelectorAll(`.${styles.number}`)
-      numbers.forEach(number => {
-        const targetNumber = parseInt(number.getAttribute('data-value'))
-        gsap.to(number, {
-          innerHTML: targetNumber,
-          duration: 2,
-          ease: "power1.out",
-          snap: { innerHTML: 1 },
-          scrollTrigger: {
-            trigger: number,
-            start: "top center+=100",
-          }
-        })
-      })
+      )
     }, sectionRef)
 
     return () => ctx.revert()
@@ -64,26 +52,16 @@ const Stats = () => {
       <div className="container">
         <div className={styles.sectionHeader}>
           <h2 className={styles.sectionTitle}>
-            Нам <span className={styles.gradientText}>доверяют</span>
+            AI: <span className={styles.gradientText}>время действовать</span>
           </h2>
-          <p className={styles.sectionSubtitle}>
-            Компании, которые уже используют наши решения
-          </p>
         </div>
 
-        <div ref={numbersRef} className={styles.statsGrid}>
+        <div className={styles.statsGrid}>
           {stats.map((stat, index) => (
             <div key={index} className={styles.statCard}>
-              <div className={styles.numberWrapper}>
-                <span 
-                  className={styles.number}
-                  data-value={stat.number}
-                >
-                  0
-                </span>
-                <span className={styles.suffix}>{stat.suffix}</span>
-              </div>
-              <div className={styles.label}>{stat.label}</div>
+              
+              <img src={stat.logo} alt={stat.source} className={styles.logo} />
+              <div className={styles.text}>{stat.text}</div>
               <div className={styles.cardGlow}></div>
             </div>
           ))}

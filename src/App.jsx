@@ -9,6 +9,7 @@ import FAQ from './components/FAQ/FAQ.jsx'
 import Footer from './components/Footer/Footer.jsx'
 import Benefits from "./components/Benefits/Benefits.jsx";
 import Request from "./components/Request/Request.jsx";
+import ThemeToggle from './components/ThemeToggle/ThemeToggle'
 
 function App() {
     return (
@@ -24,6 +25,7 @@ function App() {
             <FAQ/>
             <Request title={"Начните путь к "} titleSpan={"AI-трансформации"}/>
             <Footer/>
+            <ThemeToggle />
         </div>
     )
 }

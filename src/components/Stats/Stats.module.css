@@ -38,8 +38,10 @@
 }
 
 .statCard {
-  position: relative;
   padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   background: linear-gradient(
     145deg,
     rgba(255, 255, 255, 0.03) 0%,
@@ -47,9 +49,16 @@
   );
   border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: var(--bento-radius);
-  text-align: center;
+  position: relative;
   overflow: hidden;
+  transition: all 0.3s ease;
 }
+[data-theme="light"] .statCard {
+  background: #F0F0E8 !important;
+  border: 1px solid rgba(153, 98, 0, 0.1) !important;
+  box-shadow: 0 1px 3px rgba(153, 98, 0, 0.1), 0 1px 2px rgba(153, 98, 0, 0.06) !important;
+}
+
 
 .numberWrapper {
   display: flex;
@@ -115,6 +124,34 @@
 .statCard:hover::before {
   opacity: 1;
 }
+
+.source {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 1rem;
+  font-family: 'Involve', sans-serif;
+}
+
+.text {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+}
+
+.logo {
+  height: 40px;
+  width: auto;
+  margin-bottom: 1.5rem;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.statCard:hover .logo {
+  opacity: 1;
+}
+
 
 /* Адаптивность */
 @media (max-width: 768px) {

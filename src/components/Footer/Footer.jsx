@@ -60,7 +60,7 @@ const Footer = () => {
         </div>
 
         <div className={styles.footerBottom}>
-          <p className={styles.copyright}>© 2024 Alma-Tech. Все права защищены.</p>
+          <p className={styles.copyright}>© 2024 Alma-Tech.kz | ЧК Hybrain Ltd. Все права защищены.</p>
         </div>
       </div>
     </footer>
