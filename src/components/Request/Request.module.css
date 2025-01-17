@@ -1,10 +1,9 @@
 .request {
-  min-height: 100vh;
   position: relative;
   display: grid;
   place-items: center;
   overflow: hidden;
-  padding: 0rem;
+  padding: 3rem;
 }
 
 .particlesCanvas {

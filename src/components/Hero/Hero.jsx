@@ -67,10 +67,7 @@ const Hero = () => {
     return () => ctx.revert()
   }, [])
 
-  const scrollToForm = () => {
-    const formSection = document.getElementById('form')
-    formSection?.scrollIntoView({ behavior: 'smooth' })
-  }
+
 
   return (
     <section ref={sectionRef} className={styles.hero}>
@@ -101,22 +98,24 @@ const Hero = () => {
           </div>
 
           <div className={styles.ctaCard}>
-            <button 
-              ref={buttonRef} 
-              className={styles.button}
-              onClick={scrollToForm}
-            >
-              <div className={styles.buttonBg}></div>
-              <div className={styles.buttonContent}>
+            <a href={"https://almatech-olive.vercel.app/dashboard"}>
+              <button
+                  ref={buttonRef}
+                  className={styles.button}
+              >
+                <div className={styles.buttonBg}></div>
+                <div className={styles.buttonContent}>
                 <span className={styles.buttonText}>
                   Провести диагностику
                 </span>
-                <Icon 
-                  icon="carbon:arrow-right" 
-                  className={styles.buttonIcon}
-                />
-              </div>
-            </button>
+                  <Icon
+                      icon="carbon:arrow-right"
+                      className={styles.buttonIcon}
+                  />
+                </div>
+              </button>
+            </a>
+
           </div>
         </div>
       </div>

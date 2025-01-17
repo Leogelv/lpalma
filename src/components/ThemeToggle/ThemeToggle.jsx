@@ -1,20 +1,25 @@
-import { useState, useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { Icon } from '@iconify/react'
 import styles from './ThemeToggle.module.css'
 
 const ThemeToggle = () => {
-  const [theme, setTheme] = useState(() => {
-    const saved = localStorage.getItem('theme')
-    return saved || 'dark'
-  })
+  const [theme, setTheme] = useState('light')
 
   useEffect(() => {
-    document.documentElement.setAttribute('data-theme', theme)
-    localStorage.setItem('theme', theme)
-  }, [theme])
+    document.documentElement.setAttribute('data-theme', 'light')
+    
+    const savedTheme = localStorage.getItem('theme')
+    if (savedTheme) {
+      setTheme(savedTheme)
+      document.documentElement.setAttribute('data-theme', savedTheme)
+    }
+  }, [])
 
   const toggleTheme = () => {
-    setTheme(prev => prev === 'dark' ? 'light' : 'dark')
+    const newTheme = theme === 'light' ? 'dark' : 'light'
+    setTheme(newTheme)
+    document.documentElement.setAttribute('data-theme', newTheme)
+    localStorage.setItem('theme', newTheme)
   }
 
   return (
@@ -23,12 +28,10 @@ const ThemeToggle = () => {
       onClick={toggleTheme}
       aria-label="Toggle theme"
     >
-      <div className={styles.iconWrapper}>
-        <Icon 
-          icon={theme === 'dark' ? 'carbon:moon' : 'carbon:sun'} 
-          className={styles.icon}
-        />
-      </div>
+      <Icon 
+        icon={theme === 'light' ? 'carbon:moon' : 'carbon:sun'} 
+        className={styles.icon}
+      />
       <div className={styles.toggleGlow}></div>
     </button>
   )

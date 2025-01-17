@@ -113,6 +113,7 @@ input,
 }
 
 /* Остальные переменные без изменений */
+*{
 --font-heading: 'Clash Display', sans-serif;
 --font-body: 'Inter', sans-serif;
 --line-height-tight: 1.2;
@@ -138,7 +139,7 @@ input,
 --space-xl: 3rem;
 
 /* Bento UI стили */
---bento-radius: 24px;
+--bento-radius: 0px;
 --bento-shadow: 
   0px 2px 4px rgba(0, 0, 0, 0.02),
   0px 4px 8px rgba(0, 0, 0, 0.02),

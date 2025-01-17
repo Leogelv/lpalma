@@ -151,7 +151,10 @@
 .statCard:hover .logo {
   opacity: 1;
 }
-
+.statCard:nth-of-type(1) .logo{
+  height: 20px;
+  padding: 10px 0;
+}
 
 /* Адаптивность */
 @media (max-width: 768px) {

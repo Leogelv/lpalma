@@ -94,7 +94,7 @@ const Request = ({title, titleSpan}) => {
                         {title} <span className={styles.gradientText}>{titleSpan}</span>
                     </h2>
                     <form onSubmit={handleSubmit} className={styles.form}>
-                        <div className={styles.inputWrapper}>
+                        {/*<div className={styles.inputWrapper}>
                             <p>Введите адрес сайта</p>
                             <input
                                 value="kaspi.kz"
@@ -102,7 +102,7 @@ const Request = ({title, titleSpan}) => {
                                 className={styles.input}
                             />
                             <div className={styles.inputGlow}></div>
-                        </div>
+                        </div>*/}
 
                         <button type="submit" className={styles.submitButton}>
                             <span className={styles.buttonText}>Провести диагностику</span>
