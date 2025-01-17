@@ -152,7 +152,8 @@
   opacity: 1;
 }
 .statCard:nth-of-type(1) .logo{
-  height: 20px;
+  min-height: 20px;
+  width: auto;
   padding: 10px 0;
 }
 
@@ -184,5 +185,31 @@
   
   .statCard {
     padding: 1.5rem;
+  }
+} 
+
+@media (max-width: 1024px) {
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .logo {
+    height: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .statsGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .statCard {
+    text-align: center;
+    align-items: center;
+  }
+  
+  .text {
+    font-size: 1rem;
+    text-align: center;
   }
 } 

@@ -192,4 +192,22 @@
   .faqItem {
     padding: 1.25rem;
   }
+}
+
+@media (max-width: 768px) {
+  .faqList {
+    gap: 0.75rem;
+  }
+  
+  .question {
+    font-size: 1rem;
+  }
+  
+  .answer {
+    font-size: 0.9rem;
+  }
+  
+  .active .answer {
+    max-height: 300px;
+  }
 } 

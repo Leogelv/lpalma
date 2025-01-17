@@ -181,3 +181,24 @@
     font-size: 1rem;
   }
 } 
+
+@media (max-width: 1024px) {
+  .solutionsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .solutionsGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .cardIcon {
+    font-size: 2rem;
+  }
+  
+  .featuresList {
+    font-size: 0.9rem;
+  }
+} 

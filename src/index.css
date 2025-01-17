@@ -1,3 +1,9 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 :root {
   /* Общие переменные */
   --button-radius: 12px;  /* Единый радиус для кнопок и инпутов */
@@ -348,11 +354,23 @@ p {
 
 /* Обновленный контейнер */
 .container {
-  max-width: 1200px;
   width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
   box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 1rem;
+  }
 }
 
 /* Обновим bento-container */
@@ -1282,4 +1300,79 @@ p {
     rgba(153, 98, 0, 0.15),
     transparent 70%
   ) !important;
+} 
+
+/* Глобальные адаптивные стили */
+@media (max-width: 1200px) {
+  .container {
+    padding: 0 2rem;
+  }
+  
+  /* Уменьшаем размеры заголовков */
+  h1, .title {
+    font-size: 3rem !important;
+  }
+  
+  h2, .sectionTitle {
+    font-size: 2.5rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
+  }
+  
+  /* Еще меньше размеры для мобильных */
+  h1, .title {
+    font-size: 2.5rem !important;
+  }
+  
+  h2, .sectionTitle {
+    font-size: 2rem !important;
+  }
+  
+  /* Общие стили для карточек на мобильных */
+  .mainCard,
+  .descriptionCard,
+  .ctaCard,
+  .whyAiCard,
+  .stepCard,
+  .statCard,
+  .formCard,
+  .solutionCard,
+  .faqItem,
+  .benefitCard {
+    padding: 1.5rem !important;
+  }
+  
+  /* Сетки переводим в одну колонку */
+  .grid,
+  .statsGrid,
+  .solutionsGrid,
+  .stepsGrid,
+  .benefitsGrid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Экстра маленькие экраны */
+  h1, .title {
+    font-size: 2rem !important;
+  }
+  
+  h2, .sectionTitle {
+    font-size: 1.75rem !important;
+  }
+  
+  .subtitle, .description {
+    font-size: 1rem !important;
+  }
+  
+  /* Уменьшаем отступы */
+  section {
+    padding: 2rem 0 !important;
+  }
 } 
