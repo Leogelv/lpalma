@@ -1,0 +1,207 @@
+.hero {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  position: relative;
+  overflow: hidden;
+  padding-top: 80px;
+}
+
+.heroBackground {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.gradientBlob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(40px);
+  opacity: 0.1;
+  mix-blend-mode: screen;
+}
+
+.blob1 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle at center, var(--primary-light), transparent 70%);
+  top: -100px;
+  right: -100px;
+}
+
+.blob2 {
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle at center, var(--accent), transparent 70%);
+  bottom: -50px;
+  left: -50px;
+}
+
+.blob3 {
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle at center, var(--primary), transparent 70%);
+  top: 40%;
+  left: 60%;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.mainCard {
+  grid-column: span 2;
+  text-align: center;
+  padding: 3rem 2rem;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.03) 0%,
+    rgba(255, 255, 255, 0.01) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: var(--bento-radius);
+  position: relative;
+  overflow: hidden;
+}
+
+.title {
+  font-size: 4rem;
+  font-weight: 900;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  color: var(--text);
+  font-family: 'Involve', sans-serif;
+}
+
+.gradientText {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  color: var(--text-light);
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+.descriptionCard {
+  padding: 2rem;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.03) 0%,
+    rgba(255, 255, 255, 0.01) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: var(--bento-radius);
+}
+
+.description {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: var(--text-light);
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+.ctaCard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.03) 0%,
+    rgba(255, 255, 255, 0.01) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: var(--bento-radius);
+}
+
+.button {
+  position: relative;
+  width: 100%;
+  padding: 1.25rem 2rem;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+  border: none;
+  border-radius: 100px;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.buttonBg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--accent) 0%, var(--primary) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.buttonContent {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.buttonText {
+  color: white;
+  font-size: 1.25rem;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+}
+
+.buttonIcon {
+  font-size: 1.5rem;
+  color: white;
+}
+
+.button:hover .buttonBg {
+  opacity: 1;
+}
+
+/* Адаптивность */
+@media (max-width: 1024px) {
+  .content {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .content {
+    grid-template-columns: 1fr;
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .subtitle {
+    font-size: 1.25rem;
+  }
+
+  .description {
+    font-size: 1.125rem;
+  }
+
+  .mainCard {
+    padding: 2rem 1rem;
+  }
+
+  .descriptionCard,
+  .ctaCard {
+    padding: 1.5rem;
+  }
+} 
