@@ -4,6 +4,8 @@ import { Advantages } from './components/Advantages'
 import { Process } from './components/Process'
 import { Solutions } from './components/Solutions'
 import { MarketData } from './components/MarketData'
+import { FAQ } from './components/FAQ'
+import { Contact } from './components/Contact'
 
 function App() {
   return (
@@ -14,6 +16,8 @@ function App() {
       <Process />
       <Solutions />
       <MarketData />
+      <FAQ />
+      <Contact />
     </main>
   )
 }
