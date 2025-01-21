@@ -30,12 +30,12 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
   return (
     <div className="border-b border-gray-200 last:border-0">
       <button
-        className="w-full py-6 flex justify-between items-center text-left"
+        className="w-full py-6 flex justify-between items-center text-left bg-white hover:bg-gray-50 transition-colors duration-200"
         onClick={() => setIsOpen(!isOpen)}
       >
-        <span className="text-lg font-medium text-gray-900">{question}</span>
+        <span className="text-lg font-medium text-[#1E1E1E]">{question}</span>
         <span className={`ml-6 flex-shrink-0 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}>
-          <svg className="h-6 w-6 text-primary-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <svg className="h-6 w-6 text-[#B47D3C]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
           </svg>
         </span>
@@ -44,9 +44,9 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
         initial={false}
         animate={{ height: isOpen ? 'auto' : 0, opacity: isOpen ? 1 : 0 }}
         transition={{ duration: 0.3 }}
-        className="overflow-hidden"
+        className="overflow-hidden bg-white"
       >
-        <p className="pb-6 text-gray-600 font-light leading-relaxed">
+        <p className="pb-6 text-[#4A4A4A] font-light leading-relaxed">
           {answer}
         </p>
       </motion.div>

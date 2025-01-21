@@ -48,45 +48,44 @@ export function Contact() {
           >
             <form className="space-y-6">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="name" className="block text-sm font-medium text-[#1E1E1E] mb-2">
                   Имя
                 </label>
                 <input
                   type="text"
                   id="name"
-                  className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-primary-500 
-                         focus:border-primary-500 transition-colors duration-200"
+                  className="w-full px-4 py-3 rounded-xl border border-[#E5E5E5] bg-white focus:ring-2 focus:ring-[#B47D3C] 
+                         focus:border-[#B47D3C] transition-colors duration-200"
                   placeholder="Иван Иванов"
                 />
               </div>
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="email" className="block text-sm font-medium text-[#1E1E1E] mb-2">
                   Email
                 </label>
                 <input
                   type="email"
                   id="email"
-                  className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-primary-500 
-                         focus:border-primary-500 transition-colors duration-200"
+                  className="w-full px-4 py-3 rounded-xl border border-[#E5E5E5] bg-white focus:ring-2 focus:ring-[#B47D3C] 
+                         focus:border-[#B47D3C] transition-colors duration-200"
                   placeholder="ivan@company.com"
                 />
               </div>
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="message" className="block text-sm font-medium text-[#1E1E1E] mb-2">
                   Сообщение
                 </label>
                 <textarea
                   id="message"
                   rows={4}
-                  className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-primary-500 
-                         focus:border-primary-500 transition-colors duration-200"
+                  className="w-full px-4 py-3 rounded-xl border border-[#E5E5E5] bg-white focus:ring-2 focus:ring-[#B47D3C] 
+                         focus:border-[#B47D3C] transition-colors duration-200"
                   placeholder="Расскажите о вашем проекте..."
                 />
               </div>
               <button
                 type="submit"
-                className="w-full py-4 bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-medium 
-                       rounded-xl shadow-lg shadow-primary-500/25 hover:shadow-xl hover:shadow-primary-500/30 
+                className="w-full py-4 bg-[#B47D3C] text-white font-medium rounded-xl hover:bg-[#A06B2C] 
                        transition-all duration-300"
               >
                 Отправить сообщение
